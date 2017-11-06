@@ -1,0 +1,1 @@
+var httpModule = angular.module('httpModule',['auth']); 

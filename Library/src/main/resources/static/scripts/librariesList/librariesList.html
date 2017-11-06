@@ -1,0 +1,26 @@
+
+<div class="panel panel-default">
+<div class ="panel-heading">
+	<h1> Libraries List</h1>
+</div>
+<div class="panel-body">
+<table class="table table-striped table-bordered ">
+    <thead>
+      <tr>
+        <th>Library number</th>
+        <th>address</th>
+        <th>contact number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="library in $ctrl.libraries">
+        <td>
+        	<a ui-sref="libraryDetails({ libraryId: library.id })">{{library.id}}</a>
+        </td>
+        <td>{{library.address}}</td>
+        <td>{{library.contactNumber}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>

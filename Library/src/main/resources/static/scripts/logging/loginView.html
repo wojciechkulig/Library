@@ -1,0 +1,24 @@
+
+<h1>Login</h1>
+<form ng-submit="$ctrl.login()" name="loginForm">
+	<div class="form-group">
+		<label for="username">username:</label> <input type="text"
+			class="form-control" id="username" placeholder="Enter username"
+			name="username" ng-model="$ctrl.data.username" required ng-minlength="5">
+		<div ng-messages="loginForm.username.$error">
+			<p ng-message="required">Username cannot be empty</p>
+			<p ng-message="minlength">Username must contain minimum 5 characters</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="pwd">Password:</label> <input type="password"
+			class="form-control" id="pwd" placeholder="Enter password" name="pwd"
+			ng-model="$ctrl.data.password" required ng-minlength="5">
+		<div ng-messages="loginForm.pwd.$error">
+			<p ng-message="required">Password cannot be empty</p>
+			<p ng-message="minlength">Password must contain minimum 5 characters</p>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary btn-block brn-large" 
+		ng-disabled="loginForm.$invalid" >Submit</button>
+</form>

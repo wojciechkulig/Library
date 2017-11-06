@@ -1,0 +1,18 @@
+<h1>{{$ctrl.user.firstName}} {{$ctrl.user.lastName}}</h1>
+<hr>
+<h2>List of reservations</h2>
+<ul>
+	<li ng-repeat="reservation in $ctrl.user.reservations">
+		<div class="record-details">
+			<div>
+				<a ui-sref="libraryDetails({ libraryId: reservation.book.library.id })">[{{reservation.book.library.address}}]</a>
+				<span>Queue number: {{reservation.queueNumber}}</span>
+			</div>
+			<div>
+				<a ui-sref="bookDetails({ bookId: reservation.book.id })">Book: {{reservation.book.title}} / {{reservation.book.author.firstName}} {{reservation.book.author.lastName}}</a>
+				<br>
+				isbn: {{reservation.book.isbn}}
+			</div>
+		</div>
+	</li>
+</ul>

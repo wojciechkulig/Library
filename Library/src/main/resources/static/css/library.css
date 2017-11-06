@@ -1,0 +1,27 @@
+.wrapper {
+	padding: 20px;
+}
+.content {
+	width: 100%;
+	margin:0 auto;
+}
+.contain{
+	overflow:hidden;
+}
+h1,h2,h3{
+	text-align: center;
+}
+ul {
+list-style-type: none;
+padding-left:0px;
+}
+.bookLink{
+	text-align: left;
+	font-size: 1.5em;
+}
+.record-details{
+	background: #e1e1e1;
+	padding:10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

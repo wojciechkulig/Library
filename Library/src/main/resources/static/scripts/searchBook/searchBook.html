@@ -1,0 +1,36 @@
+<h1>Search for books</h1>
+<form ng-submit="$ctrl.submit()" name="searchBookForm">
+	<div class="input-group">
+		<input type="text" ng-model="$ctrl.title" class="form-control"
+			name="title" required ng-minlength="3" id="title" />
+
+		<div class="input-group-btn">
+			<button type="submit" class="btn btn-primary"
+				ng-disabled="searchBookForm.$invalid">find book</button>
+		</div>
+	</div>
+			<div ng-messages="searchBookForm.title.$error">
+			<p ng-message="required">Title cannot be empty</p>
+			<p ng-message="minlength">Title must contain minimum 3 characters</p>
+		</div>
+</form>
+
+
+<div ng-show="$ctrl.books">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>library address</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="book in $ctrl.books">
+				<td><a ui-sref="bookDetails({ bookId: book.id })">{{book.title}}</a></td>
+				<td>{{book.author.firstName}} {{book.author.lastName}}</td>
+				<td>{{book.library.address}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

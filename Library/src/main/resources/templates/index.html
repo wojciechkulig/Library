@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="LibraryApp">
+<head>
+<meta charset="UTF-8" />
+<script src="/webjars/jquery/2.1.1/jquery.min.js"></script>
+<script src ="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.2.0/css/bootstrap.min.css" />
+<script src ="/webjars/angularjs/1.6.6/angular.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-messages.js"></script>
+<script src ="/webjars/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+
+<link rel="stylesheet" href="/css/library.css"/>
+
+<script src="/scripts/httpRequestsServices/httpModule.js"></script>
+<script src="/scripts/httpRequestsServices/BookService.js"></script>
+<script src="/scripts/httpRequestsServices/LibraryService.js"></script>
+<script src="/scripts/httpRequestsServices/loginService.js"></script>
+<script src="/scripts/httpRequestsServices/userService.js"></script>
+
+<script src="/scripts/librariesList/librariesList.js"></script>
+<script src="/scripts/librariesList/librariesList.controller.js"></script>
+<script src="/scripts/librariesList/librariesList.component.js"></script>
+
+<script src="/scripts/libraryNavbar/libraryNavbar.js"></script>
+<script src="/scripts/libraryNavbar/libraryNavbar.controller.js"></script>
+<script src="/scripts/libraryNavbar/libraryNavbar.component.js"></script>
+
+<script src ="/scripts/libraryDetails/libraryDetails.js"></script>
+<script src ="/scripts/libraryDetails/libraryDetails.controller.js"></script>
+<script src ="/scripts/libraryDetails/libraryDetails.component.js"></script>
+
+<script src ="/scripts/searchBook/searchBook.js"></script>
+<script src ="/scripts/searchBook/searchBook.controller.js"></script>
+<script src ="/scripts/searchBook/searchBook.component.js"></script>
+
+<script src ="/scripts/bookDetails/bookDetails.js"></script>
+<script src ="/scripts/bookDetails/bookDetails.controller.js"></script>
+<script src ="/scripts/bookDetails/bookDetails.component.js"></script>
+
+<script src ="/scripts/logging/loginView.js"></script>
+<script src ="/scripts/logging/loginView.controller.js"></script>
+<script src ="/scripts/logging/loginView.component.js"></script>
+
+<script src ="/scripts/auth/auth.js"></script>
+<script src ="/scripts/auth/refreshTokenService.js"></script>
+
+<script src ="/scripts/userProfile/userProfile.js"></script>
+<script src ="/scripts/userProfile/userProfile.controller.js"></script>
+<script src ="/scripts/userProfile/userProfile.component.js"></script>
+
+<script src="/scripts/app.js"></script>
+
+<title>Library</title>
+</head>
+<body>
+	<library-navbar></library-navbar>
+	<div class="container panel panel-default wrapper">
+		<div class="row content">
+			<div ui-view="" clas="col-md-12"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="#">Library client</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a ui-sref="librariesList">Libraries list</a></li>
+      <li><a ui-sref="searchBook">Book Search</a></li>
+      <li ng-show="$ctrl.loggedIn"><a ui-sref="userProfile">My profile</a></li>
+    </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li ng-hide="$ctrl.loggedIn"><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+      <li ng-show="$ctrl.loggedIn"><a ui-sref="librariesList" ng-click="$ctrl.logout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+    </ul>
+  </div>
+</nav>

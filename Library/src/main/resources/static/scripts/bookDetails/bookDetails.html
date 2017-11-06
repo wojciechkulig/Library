@@ -1,0 +1,56 @@
+<h1>{{$ctrl.book.title}} / {{$ctrl.book.author.firstName}}
+	{{$ctrl.book.author.lastName}}</h1>
+<hr>
+<h3>Book Description</h3>	
+<p>{{$ctrl.book.bookDescription}}</p>
+<hr>
+
+
+<div>
+	<h3>Make reservation</h3>
+	<div ng-show="$ctrl.loggedIn">
+		<button ng-click="$ctrl.makeReservation()" class="btn btn-primary btn-block">Make reservation in: {{$ctrl.book.library.address}}</button>
+	</div>
+	<div ng-hide="$ctrl.loggedIn">
+		<a ui-sref='login' class="btn btn-primary btn-block">login to make a
+			reservation</a>
+	</div>
+</div>
+<hr>
+<div ng-show="$ctrl.loggedIn">
+<h3 >Add review</h3>
+
+<form ng-submit="$ctrl.addReview()" name="addReviewForm" class="form-horizontal">
+	<div class="contain">
+	<div class="form-group">
+	<div class="col-md-12">
+	<label for="description">Description:</label>
+	<textarea class="form-control custom-control" rows="3" style="resize:none" id="description" placeholder="Insert review here" name="description" ng-model="$ctrl.review.description" required ng-minlength="5"></textarea>
+	</div>
+	</div>
+	<div class="form-group">
+	<div class="col-md-12">
+	<label for="rating">Rating:</label>
+	<select name="rating" ng-model="$ctrl.review.rating" id="rating" required ng-options="i for i in $ctrl.ratingOptions"></select>
+	</div>
+	</div>
+	<div class="form-group">
+	<div class="col-md-12">
+		<input type="submit" class="btn btn-primary" value="add review" ng-disabled="addReviewForm.$invalid" />
+		</div>
+	</div>
+	</div>
+</form>
+
+<hr>
+</div>
+
+<h3>Book reviews</h3>
+<ul>
+	<li ng-repeat="review in $ctrl.reviews">
+		<div class="record-details">
+			<div style="font-weight: bold;">{{review.user.firstName}} {{review.user.lastName}} {{review.rating}}</div>
+			<p>{{review.description}}</p>
+		</div>
+	</li>
+</ul>

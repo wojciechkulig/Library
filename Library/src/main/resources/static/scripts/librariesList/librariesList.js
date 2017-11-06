@@ -1,0 +1,1 @@
+angular.module('librariesList',['ui.router','httpModule']);
